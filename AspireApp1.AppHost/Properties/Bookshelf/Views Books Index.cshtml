@@ -1,0 +1,35 @@
+﻿@model List<Book>
+
+@{
+    ViewData["Title"] = "My shelf";
+
+    int readCount = 0;
+
+    foreach (var book in Model)
+    {
+        if (book.IsRead)
+        {
+            readCount++;
+        }
+    }
+}
+
+<h1>My shelf</h1>
+
+@if (readCount == Model.Count)
+{
+    <p>All read!</p>
+}
+else
+{
+    <p>@readCount of @Model.Count read</p>
+}
+
+<div class="row">
+    @foreach (var book in Model)
+    {
+        <div class="col-md-6">
+            <partial name="_BookCard" model="book" />
+    {
+    }
+}

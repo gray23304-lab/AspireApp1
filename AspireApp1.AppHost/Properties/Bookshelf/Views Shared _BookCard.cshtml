@@ -1,0 +1,30 @@
+﻿@model Book
+
+<div class="card mb-3">
+    <div class="card-body">
+        <h5 class="card-title">
+            <a asp-controller="Books"
+               asp-action="Details"
+               asp-route-id="@Model.Id">
+                @Model.Title
+            </a>
+        </h5>
+
+        <p class="card-text">
+            @Model.Author · @Model.Pages pages
+        </p>
+
+        @if (Model.IsRead)
+        {
+            <span class="badge bg-success">Read</span>
+        }
+        else
+        {
+            <a asp-controller="Books"
+               asp-action="MarkRead"
+               asp-route-id="@Model.Id"
+               class="btn btn-sm btn-outline-primary">
+                Mark as read
+    {
+    }
+}
